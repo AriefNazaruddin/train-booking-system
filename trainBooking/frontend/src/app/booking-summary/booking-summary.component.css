@@ -1,0 +1,128 @@
+/* booking-summary.component.css */
+.booking-summary-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .booking-info,
+  .seat-info,
+  .total-amount {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .info-row strong {
+    color: #333;
+  }
+  
+  .info-row span {
+    color: #555;
+    font-weight: normal;
+  }
+  
+  .seat-details {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #e8f4ff;
+    border-radius: 6px;
+    border: 1px solid #d1e7ff;
+  }
+  
+  .seat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  
+  .seat-row strong {
+    color: #333;
+  }
+  
+  .seat-row span {
+    color: #555;
+  }
+  
+  .no-booking-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff4d4f;
+  }
+  
+  .total-amount p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+  }
+  
+  .confirm-payment {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .confirm-payment .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .confirm-payment .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .booking-summary-container {
+      padding: 15px;
+    }
+  
+    .summary-title {
+      font-size: 1.8rem;
+    }
+  
+    .section-title {
+      font-size: 1.2rem;
+    }
+  
+    .info-row,
+    .seat-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .info-row span,
+    .seat-row span {
+      font-size: 0.9rem;
+    }
+  
+    .total-amount p {
+      font-size: 1.2rem;
+    }
+  }
+  

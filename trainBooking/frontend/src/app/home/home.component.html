@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking</title>
+    <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div class="overlay">
+
+        <button (click)="logout()" class="logout-button">Logout</button>
+
+        <div class="form-container">
+            <h1>Book Your Train Ticket</h1>
+            <form [formGroup]="checkForm" (ngSubmit)="onSubmit()">
+                
+                <label for="destination">Select Destination:</label>
+                <select id="destination" formControlName="destination">
+                    <option value="">
+                        -- Select Destination --
+                    </option>
+                    <option *ngFor="let train of trains" [value]="train.destination">
+                        {{ train.destination }}
+                    </option>
+                </select>
+
+                <label for="departure">Departure Date</label>
+                <input type="date" id="departure_date" name="departure_date" formControlName="departure_date" required>
+
+                <label for="departure">Return Date</label>
+                <input type="date" id="return_date" name="return_date" formControlName="return_date" required>
+
+                <label for="departure">Number of Pax</label>
+                <input type="number" id="numOfPax" name="numOfPax" formControlName="numOfPax" placeholder="2"  required>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

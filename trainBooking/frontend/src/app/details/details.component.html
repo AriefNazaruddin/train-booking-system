@@ -1,0 +1,73 @@
+
+<link rel="stylesheet" href="details.component.css">
+<div class="details-container">
+    <h2 class="section-title">Booking Details</h2>
+  
+    <!-- Train Info Section -->
+    <div class="section">
+      <h3 class="section-subtitle">Train Information</h3>
+      <div class="detail-item">
+        <span class="label">Train Number:</span>
+        <span class="value">{{ selectedTrain?.train_number }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Destination:</span>
+        <span class="value">{{ destination }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Departure Date:</span>
+        <span class="value">{{ departure_date | date:'yyyy-MM-dd HH:mm' }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Return Date:</span>
+        <span class="value">{{ return_date | date:'yyyy-MM-dd HH:mm' }}</span>
+      </div>
+    </div>
+  
+    <!-- Coach Info Section -->
+    <div class="section">
+      <h3 class="section-subtitle">Selected Coach</h3>
+      <div class="detail-item">
+        <span class="label">Coach Number:</span>
+        <span class="value">{{ selectedCoach.coach_number }}</span>
+      </div>
+    </div>
+  
+    <!-- Selected Seats Section -->
+    <div class="section">
+      <h3 class="section-subtitle">Selected Seats</h3>
+      <div *ngIf="selectedSeat.length > 0; else noSeats">
+        <ul class="seats-list">
+          <li *ngFor="let seat of selectedSeat" class="seat-item">
+            Seat Number: <strong>{{ seat.seat_number }}</strong>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noSeats>
+        <p>No seats selected yet.</p>
+      </ng-template>
+    </div>
+  
+    <!-- Passenger Info Section -->
+    <div class="section">
+      <h3 class="section-subtitle">Passenger Information</h3>
+      <div class="detail-item">
+        <span class="label">Number of Passengers:</span>
+        <span class="value">{{ numOfPax }}</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-subtitle">Amount</h3>
+      <div class="detail-item">
+        <span class="label">Total:</span>
+        <span class="value">RM {{ numOfPax * amount }}</span>
+      </div>
+    </div>
+  
+    <!-- Confirmation Section -->
+    <div class="section">
+      <button class="btn btn-primary" (click)="confirmBooking()">Confirm Booking</button>
+    </div>
+  </div>
+  

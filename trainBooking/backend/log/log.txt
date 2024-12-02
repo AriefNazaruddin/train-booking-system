@@ -1,0 +1,50 @@
+
+2024-11-10 14:40:50 - test seat [42, 43]
+2024-11-10 14:40:50 - test coach 1
+2024-11-10 14:40:50 - test train 1
+2024-11-10 14:40:50 - test num of pax 2
+2024-11-10 14:40:50 - test  amount 30.00
+2024-11-10 14:40:50 - test user id 1
+2024-11-10 15:12:39 - <class 'str'>
+2024-11-10 15:13:08 - 30.0030.00
+2024-11-10 15:14:51 - <class 'int'>
+2024-11-10 15:14:51 - <class 'str'>
+2024-11-10 15:16:55 - <class 'decimal.Decimal'>
+2024-11-10 15:16:55 - 60.00
+2024-11-10 15:29:58 - Booking confirmed Successfully
+2024-11-10 15:30:49 - Booking confirmed Successfully
+2024-11-10 15:32:39 - Booking confirmed Successfully
+2024-11-10 15:32:57 - 1
+2024-11-10 15:36:15 - 1
+2024-11-10 15:37:22 - 1
+2024-11-10 15:37:27 - 1
+2024-11-10 15:37:29 - 2
+2024-11-10 15:37:40 - Booking confirmed Successfully
+2024-11-10 15:52:56 - 1
+2024-11-10 15:53:05 - 13
+2024-11-10 15:53:05 - Booking confirmed Successfully
+2024-11-10 16:04:31 - 14
+2024-11-10 16:04:31 - Booking confirmed Successfully
+2024-11-10 16:05:05 - 15
+2024-11-10 16:05:05 - Booking confirmed Successfully
+2024-11-10 16:10:56 - 16
+2024-11-10 16:10:56 - Booking confirmed Successfully
+2024-11-10 16:39:20 - 17
+2024-11-10 16:39:20 - Booking confirmed Successfully
+2024-11-10 17:10:44 - No train found matching the criteria
+2024-11-10 17:11:01 - 18
+2024-11-10 17:11:01 - Booking confirmed Successfully
+2024-11-10 18:43:01 - Booking confirmed Successfully
+2024-11-10 18:54:37 - Booking confirmed Successfully
+2024-11-10 19:06:01 - Booking confirmed Successfully
+2024-11-10 19:35:54 - test payment
+2024-11-10 19:36:40 - test payment
+2024-11-10 21:33:16 - Booking confirmed Successfully
+2024-11-10 21:38:41 - test payment
+2024-11-10 21:40:03 - Booking confirmed Successfully
+2024-11-10 21:40:32 - test payment
+2024-11-11 09:17:14 - No train found matching the criteria
+2024-11-11 09:18:44 - Booking confirmed Successfully
+2024-11-11 09:19:13 - test payment
+2024-11-19 09:50:46 - Booking confirmed Successfully
+2024-11-19 09:51:31 - test payment

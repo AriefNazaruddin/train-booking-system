@@ -1,0 +1,72 @@
+<!-- booking-summary.component.html -->
+<div class="booking-summary-container" *ngIf="bookingDetails">
+    <h1 class="summary-title">Booking Summary</h1>
+  
+    <div class="booking-info">
+      <div class="info-row">
+        <strong>Booking ID:</strong>
+        <span>{{ bookingDetails.booking.id }}</span>
+      </div>
+      <div class="info-row">
+        <strong>User:</strong>
+        <span>{{ bookingDetails.booking.user.username }} ({{ bookingDetails.booking.user.email }})</span>
+      </div>
+      <div class="info-row">
+        <strong>Train:</strong>
+        <span>{{ bookingDetails.booking.train.train_number }} - {{ bookingDetails.booking.train.destination }}</span>
+      </div>
+      <div class="info-row">
+        <strong>Departure Date:</strong>
+        <span>{{ bookingDetails.booking.train.departure_time | date:'yyyy-MM-dd HH:mm' }}</span>
+      </div>
+      <div class="info-row">
+        <strong>Return Date:</strong>
+        <span>{{ bookingDetails.booking.train.return_time | date:'yyyy-MM-dd HH:mm' }}</span>
+      </div>
+    </div>
+  
+    <!-- Seat Information -->
+    <div class="seat-info">
+      <h2 class="section-title">Seats</h2>
+      <div *ngIf="bookingDetails.booking.booking_seats.length > 0">
+        <div *ngFor="let bookingSeat of bookingDetails.booking.booking_seats" class="seat-details">
+          <div class="seat-row">
+            <strong>Seat Number:</strong>
+            <span>{{ bookingSeat.seat.seat_number }}</span>
+          </div>
+          <div class="seat-row">
+            <strong>Coach:</strong>
+            <span>{{ bookingSeat.seat.coach.coach_number }}</span>
+          </div>
+          <div class="seat-row">
+            <strong>Status:</strong>
+            <span>{{ bookingSeat.status }}</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- No seats booked message -->
+      <div *ngIf="bookingDetails.booking.booking_seats.length === 0">
+        <p>No seats booked.</p>
+      </div>
+    </div>
+  
+    <!-- Total Amount -->
+    <div class="total-amount">
+      <h2 class="section-title">Total Amount</h2>
+      <p>
+        RM {{ bookingDetails.booking.total_amount }}
+      </p>
+    </div>
+  
+    <!-- Confirm Payment Button -->
+    <div class="confirm-payment">
+      <button (click)="confirmPayment()" class="btn btn-primary">Confirm Payment</button>
+    </div>
+  </div>
+  
+  <!-- No booking details available message -->
+  <div *ngIf="!bookingDetails" class="no-booking-message">
+    <p>No booking details available.</p>
+  </div>
+  

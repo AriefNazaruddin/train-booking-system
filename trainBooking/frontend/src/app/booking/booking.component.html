@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Selection</title>
+  <link rel="stylesheet" href="booking.component.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Select Train</h1>
+
+    <div *ngFor="let train of availableTrains" class="train-info">
+      <div class="train-details">
+        <div class="train-number">Train Number: {{ train.train_number }}</div>
+        <div class="train-destination">Destination: {{ train.destination }}</div>
+        <div class="train-time">Departure Date: {{ train.departure_time | date:'yyyy-MM-dd HH:mm' }}</div>
+        <div class="train-duration">Return Date: {{ train.return_time | date:'yyyy-MM-dd HH:mm'}} </div>
+        <div class="train-duration">Price: RM {{ train.amount }} </div>
+      </div>
+      <button class="select-button" (click)="selectTrain(train)">Select Train</button>
+    </div>
+
+
+  <div *ngIf="trainSelected">
+    <h2>Available Coaches</h2>
+    <div *ngFor="let coach of availableCoaches" class="coach-info">
+      <div class="coach-number">Coach Number: </div>
+      <button class="select-coach-button" (click)="selectCoach(coach)">{{ coach.coach_number }}</button>
+
+      <div *ngIf="selectedCoach?.coach_number === coach.coach_number" class="seat-selection">
+        <h3>Select Seat</h3>
+        <div class="seat-grid">
+          <button class="seat-button"
+        [ngClass]="{
+          'selected': isSeatSelected(seat),
+          'available': seat.is_available,
+          'unavailable': !seat.is_available
+        }"
+        (click)="selectSeat(seat)"
+        *ngFor="let seat of availableSeats">
+          {{ seat.seat_number }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectedSeat.length === numOfPax">
+    <button class="select-button" (click)="proceedToDetails()">Proceed</button>
+  </div>
+</div>
+</body>
+</html>
